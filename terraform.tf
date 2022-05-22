@@ -67,3 +67,16 @@ resource "hyperv_machine_instance" "default" {
   hard_disk_drives {
   }
 }
+
+#this ressource type will be skipped if the VM generation is 1
+resource "hyperv_machine_instance" "default" {
+  name = "WebServer"
+  vm_firmware {
+    enable_secure_boot = ""
+    secure_boot_template = ""
+    secure_boot_template_id = ""
+    preferred_network_boot_protocol = ""
+    console_mode = ""
+    pause_after_boot_failure = ""
+  }
+}
